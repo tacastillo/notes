@@ -7,7 +7,8 @@
 		* Scribes are cool, but add an intermediary layer between physician and documentation source (EHR)
 	* Nurses
 		* HCPs that receive the most actual face time and interaction with patients
+		* observation, history taking, and examination
 		* 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMxMjI5Mzk0XX0=
+eyJoaXN0b3J5IjpbLTc5MTU4OTQxOF19
 -->
