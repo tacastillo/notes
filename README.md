@@ -1,0 +1,2 @@
+# README
+Notes for class
