@@ -1,3 +1,4 @@
+# Chapter 2: Biomedical Data, Their Acquisition, Storage, and Use 
 * **Who Collects Data**
 	* Clinicians
 		* Can collect data via conversing/observing patients + instrumentation
@@ -8,7 +9,9 @@
 	* Nurses
 		* HCPs that receive the most actual face time and interaction with patients
 		* observation, history taking, and examination
-		* 
+		* Builds the strongest relationships with patients
+			* opens opportunity for more "honest" patient records and psycho-social observations
+	*  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc5MTU4OTQxOF19
+eyJoaXN0b3J5IjpbNzAxMjU3MjAzLC03OTE1ODk0MThdfQ==
 -->
