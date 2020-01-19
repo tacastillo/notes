@@ -11,7 +11,10 @@
 		* observation, history taking, and examination
 		* Builds the strongest relationships with patients
 			* opens opportunity for more "honest" patient records and psycho-social observations
-	*  
+	*  Other HCPs
+		* office/admin staff - demographic, claims, and  financial information
+		* Physical/respiratory/occupational therapists
+		* Lab Personnel
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzAxMjU3MjAzLC03OTE1ODk0MThdfQ==
+eyJoaXN0b3J5IjpbLTEyNDMwMDM4NzcsLTc5MTU4OTQxOF19
 -->
