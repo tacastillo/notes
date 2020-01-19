@@ -145,18 +145,73 @@
   * **knowledge** - derived through analysis of information that was in turn derived from data.
   * **heuristic** - a process/methodology/way of thinking derived from knowledge
   * Example of the hierarchy - 
-    * datum - patient has a blood pressure of 180/110
+    * Datum - patient has a blood pressure of 180/110
       * parameter is blood pressure
       * object is patient
       * value is 180/110
-    * information - patients with high blood pressure are more likely to have heart attacks
-    * knowledge - reduce your blood pressure, mi dood
+    * Information - patients with high blood pressure are more likely to have heart attacks
+    * Knowledge - reduce your blood pressure, mi dood
       * how? reducing salt content in foods
       * additional nuances:
         * not helpful for patients that're of socioeconomic disadvantage because they are less likely to have access to low sodium food
-  * **database** - collection of individual observations without any summarizing analysis
+  * **Database** - collection of individual observations without any summarizing analysis
     * aka, probs doesn't have any metadata with it
     * pool/aggregate the data across an EHR and you that's when you develop *information*
-  * **knowledge base** - collection of facts, info, heuristics and models that can be used for analysis or deriving additional information
+  * **Knowledge Base** - collection of facts, info, heuristics and models that can be used for analysis or deriving additional information
     * building a knowledge base that can link data semantically through knowledge can be interpreted as CDS
       * knowledge-based systems; huh, who woulda guessed
+## 2.6 Strategies of Clnical Data Selection and Use
+* There's no such thing as a complete clinical data set
+	* necessarily incomplete because they reflect the biases, preferences, and perspective of the HCPs who did the recordings/observations
+* Example: med student vs seasoned clinician
+	* med students have strict mental outlines of what to ask and look for; taught by the med schools/books
+  	* takes an hour to go through them all; unrealistic to do in continued practice
+	* experienced clinician: asks a selective group of questions; only does the required examinations, records only "pertinent" data/information
+* **Selectivity** - it's what makes medicine an "*art*"
+  * lots of distinction and nuances between clinicians
+  * implies an ongoing decision-making process that guides data collection and interpretation
+### 2.6.1 The Hypothetico-Deductive Approach
+* **Hypothetico-Deductive Approach** - a variation of the scientific method where you iteratively refine your hypotheses with new data
+* **Differential Diagnosis** - the set of hypotheses/potential diagnoses that the physician has to test
+* Loops back to the concept of heuristics that we defined earlier as a methodology of thinking
+  * Makes things more efficient because it's impractical to spend going through all the possibilities and tests with a single patient
+* Safety measures are important so heuristics don't cause missed/erroneous diagnoses
+  * Measures tend to focus on four general categories of questions
+    * Past medical history, family history, social history, and *review of systems*
+      * **Review of Systems** - questions about the health of individual organ systems (digestive, circulatory, respiratory, etc.)
+* Create a hypothesis list, run tests, diagnostics, imaging, etc. then refine hypothesis list and rinse and repeat until you can find a diagnosis, then repeat this cycle for treatment, and if the patient doesn't get better, then re-assess the original diagnosis
+* a factor that clinicians can't neglect is the financial costs/burden involved with running tests/collecting all this data
+### 2.6.2 The Relationship Between Data and Hypotheses
+* how do clinicians generate hypotheses from data?
+* **Sensitivity** - the likelihood that a given datum will be observed in a patient with a given disease/condition
+  * ie. all pregnant people are women, but not very few women are pregnant
+* **Pathognomonic** - an observation that indicates to a particular disease and only that
+  * such as a pap smear with grossly abornmal cells can only be cervical cancer
+* **Specificity** - the type sensitivity about how unique an observation is relative to a condition
+  * very few diseases besides infections raise WBC count, but a high WBC count doesn't necessarily mean you have an infection, but it does mean that an infection is a likely diagnosis
+* **Prevalence** - the percentage of a population of interest that has a specific disease at any given time
+  * populations can be slimmed to subpopulations, which are different than samples
+  * black-lung disease is virtually non-existent in the US population, but is highly prevalent in the US subpopulation of coal miners
+* **Baseline Rate** - an average taken when conditions are normal and not influenced by unusual events (such as constant exposure to coal particulates)
+  * textbook: the prevalance in the population from which the patient was selected
+* **Predictive Value** - the updated probability that a disease based on the results of a test
+  * the initial predictive value is always the baseline rate
+* Probabilities!
+  * Calculated from the baseline rate, and then you slowly add to it via the predictive value (PV)
+  * **PV+** - the value that an observation increases the probability by
+  * Example: baseline rate of lung cancer is low, but then you factor in an x-ray with a possible tumor, higher
+    * then factor in smoking habits of patient, higher
+  * Calculated using all the above numbers (sensitivity, specificity, prevalence)
+  * high sensitivity and specificity may lead to a low (PV+)
+  * a form of *Bayes' Theorem*
+### Methods for Selecting Questions and Comparing Tests
+* Apparently, read Chapter 3 🙃
+## 2.7 The Computer and Collection of Medical Data
+* How do you get data into the computer in the first place?
+  * Everyone's been struggling to figure that out, and the poor attempts have inhibited the adoption of EHRs
+* Instruments and machines can save to EHRs directly, which is great and uniform!!!!
+  * No variation in ontology if the manufacturer is the one who maps the coding!
+* Patient-reported data
+  * Filling out forms, either paper (then scanned+copied in) or on a computer
+  * Red Cap lol
+* Clinicians are getting used to using computers
