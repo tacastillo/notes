@@ -13,8 +13,12 @@
 			* opens opportunity for more "honest" patient records and psycho-social observations
 	*  Other HCPs
 		* office/admin staff - demographic, claims, and  financial information
-		* Physical/respiratory/occupational therapists
-		* Lab Personnel
+		* Physical/respiratory/occupational therapists - progress, treatments, suggestions
+		* Lab personnel - tests
+		* Radiology techs - imaging
+		* Pharmacists - medications, usage, adherence, drug allergies
+	* Instruments
+		* lab machines, imaging, monitoring
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNDMwMDM4NzcsLTc5MTU4OTQxOF19
+eyJoaXN0b3J5IjpbLTEyMTc3NDU0NDAsLTc5MTU4OTQxOF19
 -->
