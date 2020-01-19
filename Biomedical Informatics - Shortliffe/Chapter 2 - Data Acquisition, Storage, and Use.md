@@ -19,6 +19,3 @@
 		* Pharmacists - medications, usage, adherence, drug allergies
 	* Instruments
 		* lab machines, imaging, monitoring
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMTc3NDU0NDAsLTc5MTU4OTQxOF19
--->
