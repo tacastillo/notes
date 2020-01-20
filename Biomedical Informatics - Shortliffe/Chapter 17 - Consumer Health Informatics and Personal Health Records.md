@@ -67,3 +67,9 @@
 ## 17.3 - Current Trends
 ### 17.3.1 - Consumer-Facing Software
 * > "The home and community are fast becoming the most common sites where health care is provided."
+| Mode of Engagement | Definition | Examples | 
+| ----------- | ----------- | ----------- |
+| Communication | Patient-patient, computer-patient, patient-provider | Patient portals, Patient-physician emails, online support groups, social networks |
+| Data Storage | Patient-centered data repos for patient-entered/-reported data | PHRs, data portals |
+| Behavior Management | Tools to support personal health goals, via data storage, info sharing, and communication | Weight management tools, apps, trackers, medication reminder apps |
+| Decision Aids | Enable people to weight benefits, harms, evidence and scientific uncertainty when making decisions | Calculators |
