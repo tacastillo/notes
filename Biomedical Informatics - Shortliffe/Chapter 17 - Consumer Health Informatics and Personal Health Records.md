@@ -76,3 +76,72 @@
 | Decision Aids | Enable people to weight benefits, harms, evidence and scientific uncertainty when making decisions | Calculators |
 ### 17.3.2 - Communication
 #### 17.3.2.1 - Patient-Centered Communication
+* Not uncommon for patients to see up to seven different providers for a chronic condition
+* IOM (Institute of Medicine) defines 10 rules to improve health care quality
+  * 6 of those 10 rules involve patient engagement.
+* NHII (National Health Information Institute)
+* **data liquidity** - the property of data being able to be interoperable or movable across systems/software, unlike conventional EHR data
+  * > Facilitated by patients being able to direct and access other's access to their information according to laws and protocols
+  * OTC meds, home therapy for allergies/trauma, physiologic monitoring (ECGs, continuous monitors, etc.)
+#### 17.3.2.2 Electronic Support Groups
+* ISG (Internet Support Group)
+* 28% of internet users have visited at least one ISG
+* Four primary modes of communication
+  * Email lists, instant messaging, bulleting boards and chat rooms
+  * Slow increase group videoconferencing and socialization interventions
+#### 17.3.2.3 Social Networks
+* "Patients Like Me"
+* Consumers on sites like these are highly willing to contribute data and observations without compensation to accelerate learning about their disease
+* Social networks short circuits the traditional research enterprise
+  * Rewards participants and researchers
+### 17.3.3 - Patient Access to Health Information
+* **Guardian Angel Proposal** - [Website](www.ga.org) - vision of a web that manages a patient's health records, decision support, insurance benefits, education and communication
+#### 17.3.3.1 Portals
+* **Portals** - Consumer-facing systems attached to EHRs that allow patients to view clinical or claim data
+  * ex. Epic's MyChart
+* Additional Functionality
+  * patient-physician messaging, appointment scheduling, viewing/managing bills
+#### 17.3.3.2 Personal Health Records
+* **PHR (Personal Health Records)** - an application that patients can manage, access, and share their own health information with others in a private and secure environment
+* Paper version: immunization record books
+* 1:1 mapping vs EHR's many:many mapping
+* Enabled by a patient's right to their data from the institutions they receive care from
+  * Justified via HHS' **Meaningful Use**
+#### 17.3.3.3 Personally-Controlled Health Records
+* **PCHR - Personally-controlled health records** - a special form of PHR... undefined ☹
+  * But basically Mint or Quicken for health data
+  * Roll up the data from all your healthcare institutions
+* *Indivo* - super example of PCHR architecture, started off at Harvard as PING (Personal Internetworked Notary and Guardian)
+* Pulling from EHRs is difficult because EHRs are resistant to interoperability
+* Allow patients to selectively authorize access to family, hospitals, specific providers, researchers, proxies, etc.
+### 17.3.4 Behavior Management
+* health prevention through wellness activities
+  * active lifestyle development, stress reduction, smoking cessation, weight control
+  * self-care
+  * *preventative medicine*
+* Apps a great medium for this
+| Name and source | Summary |
+| --- | --- |
+| Self-efficacy | an individual's impression of their own ability to perform a task, either physically or mentally |
+| Social cognitive therapy | behavior change is dependent on personal, environmental and behavioral elements; interdependent elements |
+| Theory of planned behavior | link between attitudes and behavior; behaviors viewed positively and supported by others are morely likely to happen |
+| Transtheoretical/stages of change | 5-stages process; fluid stages |
+### 17.3.5 Consumer Decision-Making
+* Informing users
+* Building question-driven decision trees
+* Calculators
+* Descriptions and testimonials about future outcomes are shown to increase consumers' knowledge and satisfaction with treatment decisions
+* Still a challenge to integrate into a clinical workflow
+### 17.3.6 Consumer Information Access
+* EHRs aren't designed to give data "just-in-time" but rather "just in case"
+#### 17.3.6.1 Passive Information Access
+* ...stuff you can read; or presentations
+#### 17.3.6.2 Active Information Access
+* Voice assistants
+* Automated feedback
+* Alerts
+* Dashboards
+* Text messaging
+* Reminders
+  * ex. appointment reminders reduce no-show rates
+## 17.4 Opportunities and Challenges
