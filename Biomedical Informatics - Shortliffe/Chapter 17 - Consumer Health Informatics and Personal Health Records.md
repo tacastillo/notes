@@ -145,3 +145,52 @@
 * Reminders
   * ex. appointment reminders reduce no-show rates
 ## 17.4 Opportunities and Challenges
+### 17.4.1 Health Information Technology for Economic and Clinical Health Act of 2009
+* HITECH Act - individuals have the right to obtain a copy of their EHR data electronically
+  * Required by 2013
+* **Blue Button Initiative** - from the VA; shows that a site can download their health data
+* Google Health project failed because it was supposed to leverage it, but not enough places supported it by the time funding ran out
+  * Also. people didn't trust Google
+* Empowerment and action would make population health research so much easier
+  * Imagine being a researcher and just reaching out to the public to ask for their data rather than trying to go through the ARB process 🙃
+### 17.4.2 Information Credentialing
+* Y'all can't trust information on the internet
+* But credentialing people to post on the internet is tough:
+  * It'd be a lot to moderate
+  * Puts all the control into professionals again, defeating the purpose
+  * ^ yeah that; it's contradictory
+### 17.4.3 Privacy and Security
+* Making sure your data is safe when you put it on the internet is tough
+* Can look for certifying authorities such as URAC, TRUSTe and HON
+* Privacy policies on search engines
+* Oh god, home monitoring makes it even more complicated
+  * blood pressure, glucose, activity, **location**, sleep quality
+* Not all care team members should have access to the same data fields
+* In 2010, 250% jump in mobile phone viruses; 61% of reported smartphone infections are spyware
+### 17.4.4 Technology Data Divide
+* Access to internet is an issue
+* Language, literacy, and typing/physical capability issues are things that can limit a patient's use of online HC resources
+* Not kosher to ignore them
+### 17.4.5 Workflow Integration
+* > "Physicians are reluctant to review patient-generated information until it is a reimbursable activity"
+  * Can we also trust the detail of patient-reported/-entered data
+  * But this is as in encounters strictly pertaining to looking at this data
+    * A solution is to book a normal appointment and review the data then
+* There isn't a standard to import patient-created data into a physician's EHR
+* Difficult to describe the data to a patient
+  * Patient expectations to get a buttload of info is difficult to manage on both sides
+* Still trying to figure out patient preferences in communications
+## 17.5 Future Directions
+### 17.5.1 Home Computing Power
+* Waves of Computing (woohoo)
+  * First: Mainframe computers - many people:one computer
+  * Second: Personal computers- one person:many computers
+  * Third: Ubiquitous computing - embedded into our lives passively
+* "Smart" health tech - aware of your circumstances; passive in your life
+  * pillbox that saves to EHR when drugs are taken; also automatically requests refill once its empty
+### 17.5.2 Patient Communication
+* [Research Match](www.researchmatch.org) - allows consumers to build a profile and get notified when there's a clinical trial that they are eligible to participate in
+### 17.5.3 Data Informing Knowledge
+* Imagine personalized medicine 🌈
+  * Patient-reported data, NLP, EHR data, big data, yadda yadda
+* Active CHI will difficult while the healthcare system focuses and hinges on a patient-provider-driven partnership
