@@ -87,3 +87,81 @@ tags:
 * giving nurses alerts are useful for creating preventive measures
 ### 12.3.4 Access to Knowledge Sources
 * an advanced/specialized CDS to provide linkages to NLIM PubMed/MedlinePlus and CDC info while documenting with a patient
+  * buzzword is to "pull literature"
+### 12.3.5 Integrated Communication and Reporting Support
+* intra-EHR communication has been getting better
+* untapped potential in communication between EHR and PHR
+  * CGMonitors, home health data, consumer health data, etc.
+* also improve patient hand-offs, aka. one clinician to another
+* alert clinicians that Rx tests aren't being followed through with
+* **(HIE) Health Integration Exchange** - groups of EHRs that share data and registries amongst each other
+  * Indiana, Ontario, Kentucky, Memphis all have their own HIEs
+* **eHealth Exchange** - formerly known as the HHS's NwHIN System
+  * HUUUUGE HIE across the US
+  * Read how many health systems are attached to it [here](https://ehealthexchange.org/participants/).
+## 12.4 Fundamental Issues for Electonic Health Record Systems
+* issues and alternatives related to data entry in EHRs
+### 12.4.1 Data Capture
+* Two ways to capture data:
+  1. automated/electronically, ie. piping in straight form a lab machine and is automatically documented within the appropriate place in the EHR
+  2. direct manual entry
+#### 12.4.1.1 Electronic Interfaces
+* preferred method is to connect an electronic interface like a machine to an EHR and pipe the data in automatically
+* but bruh good luck tryna interface with *another* EHR **outside** of your own system through
+  * like what happens when you go from a private practice peds to a PCP in a health system? nothing. that's what happens
+#### 12.4.1.2 Manual Data Entry
+* Combination of coding ontologies and free text
+* Coding is great because it makes the data understandable by a machine
+  * **selective retrieval** is a great word to describing the act of querying, aggregating, rolling up data, etc.
+  * also allows for autocomplete
+* Autocomplete or matching by producing a list of synonyms and showing confidence of matching is great
+  * but actual NLP would be way better
+#### 12.4.1.3 Physician-Entered Data
+* Physicians are spending 20%+ of time documenting clinical encounters in an EHR
+* Many clinicians believe that the people who Rx or create findings should be the one to document them
+* A metric: the cost of an HCP's time
+  * ie. a clinician's time is costly and wasted when documenting in an EHR, but not a scribe's 
+* Dictation by transcription is a thing
+  * but transcriptions are never completely accurate; someone still has to go over and validate it
+    * more boring and possibly error-prone than just writing it from scratch
+* so are scribes
+* **Structured Encounter Forms** - templated paper forms that are easy to convert to structured EHR data
+  * boxed numbers, checkboxes, circling, bar codes, etc.
+* Manual entry may taking longer than paper records
+  * average of 20s per SNOMED code
+* Use of Templates
+  * speeds things up, but
+  * generates excessive boilerplate
+  * discourages being specific
+    * easier to pick from a dropdown than to write out a phrase of detail
+* HCP heuristics
+  * contains *pertinent negatives* 
+    * things that the patient doesn't have; but knowing they don't have them can help in Dx
+  * very little noise in comparison to pre-populated data
+  * they often copy+paste from previous notes
+    * makes things worse though because it means errors are propagated across history + patients
+    * studies have shown 58% of clinical text in a note has been previously copy+pasted
+* current ideal is *semi-structured*
+  * narrative text fields enriched by NLP + formally structured fields *of value*
+#### 12.4.1.4 What to Do with Charts Older Than Your EHR
+* an option is to load only 6-12 months of data from before going live with your EHR
+* or do "relevant" or selectively pick data
+* or do 1-2yrs of charts after installation and just slowly load them in over time
+* OCR bruh, Optical Character Recognition
+#### 12.4.1.5 Data Validation
+* buzzwords: *validity checks, range, pattern, computed (sums/ratios make sense), consistency, delta (changes), and spelling checks*
+### 12.4.2 Data Display
+* For off-site view, TLS (Transport Layer Security) and SSL (Secure Sockets Layer) are used
+#### 12.4.2.1 Timeline Graphs
+* ...lol the writer *loves* Tufte's sparklines
+* tables are also cool
+#### 12.4.2.2 Timeline Flowsheets
+* basically specialized dashboards towards certain templates, ie. radiology
+#### 12.4.2.3 Summaries and Snapshots
+* Right now, the summaries are pretty low tech
+* but we're looking at having CDS-empowered alertson these summaries
+  * adverse events automatically pop up
+#### 12.4.2.4 Dynamic Search
+* 
+
+
