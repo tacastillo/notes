@@ -4,7 +4,10 @@ require(`dotenv`).config({
 
 module.exports = {
   siteMetadata: {
-    siteTitleAlt: `Minimal Blog - Gatsby Theme`,
+    siteTitle: "Tim's Notes",
+    siteTitleAlt: `Tim's [TV-MA] Notes`,
+    siteUrl: 'https://cranky-tereshkova-4c0233.netlify.com/',
+    author: 'Tim Castillo'
   },
   plugins: [
     {
@@ -22,13 +25,9 @@ module.exports = {
         ],
         externalLinks: [
           {
-            name: `Twitter`,
-            url: `https://twitter.com/lekoarts_de`,
-          },
-          {
-            name: `Instagram`,
-            url: `https://www.instagram.com/lekoarts.de/`,
-          },
+            name: `Linkedin`,
+            url: 'https://www.linkedin.com/in/tacastillo/',
+          }
         ],
       },
     },
