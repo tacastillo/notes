@@ -1,7 +1,7 @@
 ---
 title: Chapter 13 - Data Information Infrastructure
 slug: /shortliffe/13
-date: 2020-01-30
+date: 2020-02-01
 tags:
   - HC-4600
   - Biomedical Informatics
@@ -9,4 +9,131 @@ tags:
   - Reading
   - Module 4
 ---
-Here is content
+## Objectives
+* What is the vision and purpose of HII?
+* What kinds of impacts will HII have, and in what time periods?
+* What are the political and technical barriers to HII?
+* What are the desirable traits of an HII?
+## 13.1 Introduction
+* **HII (Health Information Infrastructure)** - community level informatics systems designed to make complete patient records available for everyone
+* Issues: privacy, stakeholder coop, digitalization of records, financial upkeep
+* no country has a full HII
+  * Canada, Australia, UK and some EU nations have spent billions on this
+    * Should've been easy for these countries tho, bc centralized healthcare 🤷🏻‍♂️
+## 13.2 Vision and Benefits of HII
+* CDS using population-level data
+* everyone would have access to this
+  * clinicians wouldn't have to focus as much on info upkeep
+  * patients could look back at their clinical notes and update info on it
+    * or alert family members of emergency care, etc.
+* Data can't be missing or else it's worthless for clinical insight
+  * or worse: may provide misleading insight
+* This chapter has a lot of repitition about the value and impact of CDS 😬
+* retrospective clinical studies would get a huge boost with the amount of *de-identified aggregate data*
+* !!! Population-level surveillance on potential outbreaks of disease
+  * If you have multiple hospitals/practices have a boost in a new virus, there's probably an epidemic going on
+* > "Healthcare must be 'informed' before it can be 'reformed'."
+## 13.3 History
+* There were many **CHINS (Community Health Information Networks)** in the 90s
+  * not enough value/urgency
+* The ONC Executive Order also brought in **RHIOs (Regional Health Information Organizations)**
+  * an attempt, but were not financially sustainable
+## Requirements for HII
+* hard bc many stakeholders with varying priorities
+### Privacy and Trust
+* failure to be secure means patients are less likely to share data
+* HIPAA requires patient consent for record release
+  * except for **TPO** cases - treatment, payments and operational purposes
+  * TPO disclosures were not reported/tracked until recently (past decade or so)
+* 13-17% of consumers (patients) intentionally hide data
+  * doing lab tests under a psuedonym, or doing them out of state
+### 13.4.2 Stakeholder Cooperation
+* Mandating coop seems like the only way, but good luck doing that
+### 13.4.3 Ensuring Information in Electronic Form
+* You'd need end-to-end EHR adoption of all HCPs that a patient interacts with
+* Cost/benefit of using EHRs isn't entirely there for places with limited resources
+* In a study, 89% of an EHR's benefits were beneficial to someone besides the clinician 😒
+* HITECH subsidies for EHR adoption - $44k to $64k
+  * subsidies are one time, EHR subscriptions are forever
+* Hospitals can afford to adopt EHRs since they get **DRG (Diagnosis-Related Group)** reimbursement incentives
+  * fixed amounts per reported with specific condition
+  * [Read more about it here](https://www.ahd.com/ip_ipps08.html)
+### 13.4.4 Financial Sustainability
+* Three approaches for FS
+  1. public subsidy
+    * supporters believe an HII is a public good, such as roads
+    * taxes - integrate paying for an HII via adding taxes 
+    * or user fees
+  2. leveraging future cost savings
+    * its a hard-to-predict, nebulous amount for most hospital systems
+  3. leverage new value adds
+    * or potential reductions
+      * ex. removing the need for lab test deliveries
+* Most lucrative is building CDS apps not available without all this data
+### 13.4.5 Community Focus
+* trust is typically founded at the local level
+* lack of HIIs larger than 10m because trust dissipates
+### 13.4.6 Governance and Organizational Issues
+* the governing org must be trusted
+  * and devoid of any biases
+* many argue that an HII can't be run by the gov because you can't trust the gov
+* can't put at the employer-level because people don't want health records associated with their employers
+* can't put it at the insurer levels because insurers want to deny/not reimburse care
+* hospitals are in competition with each other, so you can't trust it to hospitals
+* physicians are trusted, but they're not organized
+* maybe a new third party is needed
+## 13.5 Architecture of HII
+### 13.5.1 Institution-centric Architecture
+* most existing HII systems sit at the institution/health system level
+* expensive to query
+  * you'd have to sequential search for a specific stat 🙃
+  * you could pre-index, but then you're just duplicating your data over at an exponential scale
+* breaking down the queries at the provider-level and then rolling up isn't effective
+  * no single provider has the entire longituding record for a patient
+  * PCORNet and their data marts aren't necessarily this, but think that level of distribution
+* **NOC (Network Operations Center)** - basically SRO, but for an entire system, 24/7 uptime
+### 13.5.2 Patient-Centric Architecture (Health Record Banking)
+* **HRB (Health Record Bank)** - an independent organization that manages patient data, like a bank but for clinical records
+* Patient gives HCP access to their own health records, and the HCP uses that access key to query the HRB
+#### 13.5.2.1 Patient Control Ensures Privacy and Stakeholder Cooperation
+* In an HRB, everything requires the *consumer's consent* inherently
+* Okay, so like patients can now trust orgs, but can physicians trust *patients*?
+  * we'd need transparency and a constantnly updated/write-locked PHR/HRB
+#### 13.5.2.2 Assuring the Information is in Electronic Form and Complies with Standards
+* In order to interface with an HRB, clinicians must be on an EHR, ofc
+  * can't trust a printed out HRB 📁
+* we're still struggling with outpatient EHR adoption though
+* create incentives for a physician to upload to an HRB
+* If the EHR is run by the HRB, then you don't need to worry about interop*
+#### 13.5.2.3 Business Model
+* lower cost and higher revenue opportunities than putting the patient data into an institution
+* Institution-centric HII's have an average of 2.73 failures per day
+* Easier to query since you have N nodes for N data points (a patient record)
+  * great for alert-based CDS systems!
+    * either a node directly gives the message to the patient, or sends it outbound to a physician's EHR
+  * also great for advertising directly to patients
+    * not just drugs, I hope
+    * but also health initiatives, better habits, preventive care, etc.
+    * by god though, what a fine line between being a health history-driven Google or FB....
+* A lot of these business models are made at the patient-level
+  * "$4 per patient per year, $20 per patient per year for 20% of patients"
+* Possible ways that HRBs could keep EHRs in check by subsidizing
+  * promotes more EHR adoption
+  * subsidize only compliant EHRs (ex. following data interop standards)
+## 13.6 HII Evaluation
+* Measures
+  * The KPIs for evaluation an HII must change over time, as technology changes pretty quickly (like every 5-8 years)
+  * Metrics must be affective to most stakeholders
+  * measures must be valuable to policymakers or else no movement will happen
+  * the eval methods should be quick and easy, so you don't focus on always being audited/measured
+* Examples of metrics
+  * % of pop in an HII
+  * % of HCPs using an HII
+  * Variety/spread of clinical settings: inpatient, outpatient, long-term, home care, community, etc.
+  * usage: forms, CPOEs, Rx, etc.
+* Currently, most of the largest HIIs are only 60-78% satisfactory
+## 13.7 Conclusion
+* We gotta make progress, folks.
+
+
+  
