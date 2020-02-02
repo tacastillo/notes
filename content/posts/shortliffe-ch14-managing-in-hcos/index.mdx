@@ -1,0 +1,145 @@
+---
+title: Chapter 13 - Managin of Information in Health Care Organizations
+slug: /shortliffe/13
+date: 2020-02-01
+tags:
+  - HC-4600
+  - Biomedical Informatics
+  - Shortliffe
+  - Reading
+  - Module 4
+---
+## Objectives
+* What are the primary info reqs of HCOs
+* What are the clinical, financial and admin functions provided by health care information systems; and what are the benefits?
+* How have changes in HC delivery models changed the scope of HCISs?
+* How do differences among business strategies and org structs influence info systems' choices?
+* How are ongoing HC reforms, tech advances, and changing social norms likely to affect HCISs?
+## 14.1 Introduction
+* **HCO (Health Care Organizations)** - business entities that deliver clinical care
+  * like health systems
+* Various stakeholders in an HCO
+  * Clinicians, admins, governing boards
+* **HCIS (Health Care Information System)** - tooling to support access and maangement that HCPs need
+  * clinical, claims, operational data, etc.
+* **ACO (Accountable Care Organization)** - something something, about linking quality with cost, etc... I spent 5 minutes trying to find a non-circumnavigate-y definition, but failed
+### 14.1.1 Evolution from Automation of Specific Functions Health Care System Information Systems
+* **IDN (Integrated Delivery Networks)** - consolidating providers into one system
+  * very strong at the regional level in the 90s
+* Started off at department-level HISs
+* Ambulatory Medical Record Systems - for large outpatient clinics
+* Practice Management Systems - for private practice physicians
+* But good luck with data interop
+  * a 2-way interface is... don't forget, a 2-way street
+    * it's 2 transforms, not 1; never forget
+* **Interface Engine** - an intermediary service that other HISs translated into, and the engine needed to know how to translate out the HIS' proprietary data model
+* Many IDNs were either swallowed up by large national health systems, or joined up with an HMO (payer)
+* Hospitals make a lot of many because it's few patients, but the treatments are expensive (inpatients)
+  * Business models that work in hospitals don't necessarily work in outpatient clinics
+    * High throughput of patients, low cost treatments
+### 14.1.2 Information Requirements
+* For clinicians:
+  * present patient-specific data to care givers for interpretation
+  * communicate with other HCPs
+* For admins:
+  * daily operation and management
+  * bills, employee/vendor payments, supplies
+* Operational Info Needs
+  * Operational requirements
+    * where is the patient? what drugs are they taking? who is their payer?
+    * what patients need a reminder for their appointment?
+  * Planning requirements
+    * What are the clinical guidelines? What have similar patients done? 
+  * Documentation and reporting requirements
+    * record maintenance for internal and external reporting
+    * ex. vaccination, STD reporting, creditation/accreditation, Medicare/Medicaid
+### 14.1.3 Integration Requirements
+* Availability/uptime, integrated view, consistent data; secure
+#### 14.1.3.1 Data Integration
+* Inpatient data is typically much more detailed than outpatient
+  * some places are happy with just outpatient claims data
+    * especially ambulatory-care clinics and private practices
+* Inconsistencies can happen during hand-off
+#### 14.1.3.2 Process Integration
+* How do we combine data longitudinally and have access to the whole narrative?
+* Case managers for patients were not a huge thing until recently
+* HCISs are only worth it if they the infrastructure and use cases are planned out and existent
+  * Cost/benefit analysis
+  * Don't do it for the sake of doing it
+### 14.1.4 Security and Confidentiality Requirements
+* ...HIPAA
+* Most security breaches are due to human error, not computer error
+### 14.1.5 Benefits of HCISs
+* HCPs spend about 3/4s of their time handling information
+* Cost Reduction (due to efficiency)
+* Productivity Enhancements
+  * the initial producitivity after adoption drops though because of the learning curve
+* Quality and Service Improvement
+  * documentation completedness, reduction in drug errors, quicker response to adverse events, and inter-provider comms
+* Competitive Advantage
+* Regulatory Compliance
+  * regulations via FDA, HIPAA, DoLabor, OSHA, EPA, etc.
+### 14.1.6 Managing Info Systems in a Changing HC Env
+* HCIS implementation often takes multiple years and 10s of millions of dollars
+#### 14.1.6.1 Changing Technologies
+#### 14.1.6.2 Changing Culture
+* Value-based care and pay-for-performance
+#### 14.1.6.3 Changing Processes
+* LEAN or Six Sigma
+* How interdisciplinary care works
+#### 14.1.6.4 Management and Governance
+* word soup
+## 14.2 Functions and Components of an HCIS
+### 14.2.1 Patient Management and Billing
+* hospital census and patient billing were the first to get automated
+* ***E*MPI (*Enterprise* Master Patient Index)** - used to map patient data within/across an institution
+* **ADT (Admission-Discharge-Transfer)** - model to track inpatient patient status
+  * also, all events you can bind CDS alerts to
+    * or housekeeping alerts at hand-off
+* **Patient-tracking application** - software used to monitor where a patient is
+  * ie. how long in the ED waiting, then in triage, then actually seen
+### 14.2.2 Ancillary Services
+* support the clinical departments
+* labs, pharma, diagnostics, radiology, blood-bank, ORs, medical records, etc.
+* lots of these verticals can be automated
+### 14.2.3 Care Delivery and Clinical Documentation
+* automated *CPOE* and *results reporting*
+* **Clinical Pathways** - time-based heuristics for clinical goals, treatments, and expected outcomes
+* **Closed Loop Medication Management Systems** - tracking e2e the ordering, dispensing, and administering of drugs to a patient
+### 14.2.4 Clinical Decision Support
+* Examples
+  * alerts on patient food or drug allergies
+  * calculators for drug dosages
+  * recommended antiobiotics before a surgery
+  * prompting/discontinuation of drug refills
+  * **Clinical-event monitors** watch for adverse events
+  * Reminders for preventive services like mammograms, vaccinations, etc. 
+### 14.2.5 Financial and Resource Management
+* ofc this stuff is the first to get adopted electronically
+* **EDI (Electronic Data Interchange)** - standardized payment transfers between payer and providers
+* Types of payments: **capitated, bundled, diagnosis-based, per diem**
+* **Contract-Management Systems** - tools to estimate cost of care and compare to actual stats
+* **Patient Triage** - direct patients to the appropriate health services
+## Historical Evolution of the Tech in HCISs
+### 14.3.1 Central and Mainframe-based Systems
+* Okay, this chapter *also* mentions the L-Martin El Camino Hospital EHR
+  * I'm officially calling it: an EHR is a type of HCIS
+* ...single computer on-prem systems
+### 14.3.2 Departmental Systems
+* dedicated per dept
+### 14.3.3 Integrated Systems from Single Vendors
+* "best-of-breed" - ok, capitalism
+## 14.4 Architecture
+* 3 layers: data, business logic, and user-interface
+## 14.5 Forces That WIll Change the Future of HCISs
+* HITECH Act, ARRA Act
+### 14.5.1 Changing Organizational Landscape
+* 3-4% of total revenue in HC is spent in tech operating budgets
+  * Most industries spend 3-4 times *that*
+### 14.5.2 Tech Changes
+* Yeah, really can't trust this guy; homeboy just said XML is the future 🙃
+* speech-to-text, NLP, multimodality, etc.
+* Interop - patients see multiple physicians, and a PCP, and potentially across multiple HCOs or IDNs
+### 14.5.3 Societal Changes
+* Preventative care is more popular
+* ....did USB sticks really just get highlighted as a vocab word? Thank god this chapter is done.
