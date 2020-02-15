@@ -1,0 +1,110 @@
+---
+title: Chapter 2 - Clinical Decision-Support Systems
+slug: /shortliffe/22
+date: 2020-02-12
+tags:
+  - HC-4600
+  - Biomedical Informatics
+  - Shortliffe
+  - Reading
+  - Module 5
+---
+## Objectives
+- [ ] Key motivations for CDS?
+- [ ] How is CDS relevant to meaningful of EHRs?
+- [ ] What are typical design consideraitions when building CDS?
+- [ ] What are some ways in which devs of CDSS encode clinical knowledge?
+- [ ] What are some current standards in HIT industry that facilitate the construction of CDSS
+- [ ] Why has adoption been slow and what are the prospects of broader use?
+- [ ] What are the key areas for R&D in CDSS?
+## 22.0 - Introduction
+* **Clinical Decision Support (CDS)** - process that "provides clinicians, staff, patients or other individuals with knowledge and person-specific; _intelligently_ filtered or person-specific information"
+  * Aren't just fetching data; they also communicate
+* Five right things
+  * the right information
+  * to the right person
+  * in the right format
+  * through the right channel
+  * at the right point in the workflow
+* Three basic varieties
+  * Fetching relevant data based on the patient's info
+    * "See Alsos"
+    * In EHR world, have been called "infobuttons" in the past
+  * Recommend based on patient-/situation-specific data
+    * Recommendation systems
+  * Organize and present data in a way that facilitates problem solving and decision making
+    * ie. Dashboards
+    * or documentation templates, structured reports, and order sets
+      * Order sets - a collection of potential orders (Rx, Tx, etc.)
+## 22.1 The Nature of Clinical Decision-Making
+* Diagnosing isn't the only thing that CDS should tackle
+  * Just as important is the *process* of diagnoses - what tests, procedures to order and how to analyze the values of such
+    * A patient's response to an therapy/Tx is also a diagnostic test
+  * An estimation of a prognosis can also provide value; as long as its ethically and reasonably conveyed as such
+* CDS can also be used for population-level support
+  * lab scientists can plan research based on CDS-driven data
+  * hospital admins can use it for operational/resource management
+* Strong CDS depends on 3 things:
+  * Accurate data
+  * Pertinent knowledge
+  * Appropriate problem-solving skills
+* Don't bombard your user with data!!!!
+* data should be summarized for easier cognitive management
+  * but don't over-simplify
+* Be aware of your biases when designing CDS
+* Cost-benefits must be kept in mind
+* Be as held to as high standards as an actual clinician diagnosing a patient
+## 22.2 Motivation for Computer-based CDS
+* Three origins of urgency:
+  * increasing challenges with large amounts of data
+  * pressure to adopt EHRs and practice meaningful use
+  * desire to deliver personalize healthcare - using a patient's preferences/genome as the foundation for care
+### 22.2.1 Physician Information Needs and Clinical Data Management
+* Unanswered clinical questions are common in ambulatory settings
+  * 81% of clinical encounters may be missing critical information
+* Might attribute to 18% of clinical errors
+### 22.2.2 EHR Adoption and Meaningful Use
+* Meaningful use kinda cuts off/gets fuzzy on defining on how EHRs/health systems should work with CDS
+### 22.2.3 Personalized Medicine
+* **Reductionst Biomedical Model** - the Dx process of breaking down conditions into smaller parts, and running tests/Tx to figure out what to diagnose and how to treat
+* **Biopsychosocial Model** - New age mentality that include psychological and social (basically determinants) as a part of diagnosis and treatment of a patient
+  * much more holistic
+* Clinicians will be overwhelmed with the amount of data and expectations to use it (created by genomics, social determinants, etc.)
+### 22.2.4 Saving Potential with Health IT and CDS
+* hard to measure ROI of CDS
+  * CDS comes early in the process before an endpoint is reached; therefore the stats are hard to control for considering the amount of things that can happen between the two touchpoints
+## 22.3 Methods of CDS
+* May summarize data, use logic, visualize data differently, provide therapy advice, suggest diagnostic assistance, cost-benefit analysis, etc.
+* Three Case Studies
+### 22.3.1 Leeds Abdominal Pain System
+* Late 1960s, U of Leeds
+* Bayesian stats on thousands of patients to diagnose/bucket reason for abdominal pain
+  * ie. appnedicitis, diverticulitis, perforated ulcer, cholecystitis, small-bowel obstruction, pancreatitis, and non-specific (other)
+* To make the math easy, it assumed that findings were independent of one another, and that the lines between the possible conditions were strict
+* Models were verified/labeled based on what the real diagnosis was during surgery
+* done retrospectively in batch processes
+* clinicians were 65-80% correct; model was 91.8% correct
+### 22.3.2 MYCIN
+* rule-based consultation system for managing patients with blood-borne bacterial infections
+* basically a choose-your-own-adventure flow chart
+* If this and this and this, then that
+* used backwards chaining
+  * looked at previous answers in the chain to filter out the next level
+    * If it knew you answered A on question 3 and C on question 5, then it knows to ask you about B on question 9
+  * opposite is forward chaining - looking at the "also trues" in the logic tree ahead of it
+  * **wow this is probably just all wrong**
+    * trust [this instead](https://www.javatpoint.com/difference-between-backward-chaining-and-forward-chaining)
+* Regardless, the charts were incredible volatile basically on singular node chang  es in the graph
+### 22.3.3 HELP
+* generated automated alerts when abnormalities in the patient record were discovered
+* **ECA (Event-Condition-Action) Rule** - on an event, a condition is evaluated, and if true, an action is performed
+### 22.3.4 Comparing the Early CDS Systems
+* When developing, they all answered 3 questions
+  * What input data will drive the decision
+  * How will with output be communicated
+  * How do you construct an output from the input
+* Data collection
+  * Leeds - checklists, not burdensome
+  * MYCIN had a potentially long questionnaire 
+  * HELP - no additional collection needed; already done passively through entering in the EHR
+* 
