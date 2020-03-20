@@ -1,0 +1,49 @@
+---
+title: Random Imaging Notes
+slug: /other/imaging
+date: 2020-03-19
+tags:
+  - Imaging
+  - Medical Imaging
+  - CT
+  - PET
+  - MRI
+  - PET
+  - DICOM
+---
+* CT - Radiation - difficult to use, but super high-resolution
+* MRI - Magnets - flexible, but expensive
+  * different levels of granularity and details, of soft tissue/liquids
+  * can't see bones
+  * fMRIs - functional MRIs
+* Ultrasound - cheap and light
+* PET - Inject radioactive material - trace material in the body
+  * PET vs PET TrueX
+    * Two different signals being read
+      * PET ignores bones by comparing to the CT, PET True is the raw with bones
+* Details
+  * Come in parallel slides
+  * detail isn't all that great.
+  * 512x512 vs the 1000s in pathology pyramid structure
+* Completely different from pathology
+* Can be a single 2-D array, or a intersecting 2-D arrays
+  * or even adding a 3rd intersection of a 2-D array (**Time!**)
+* Important to be able to combine and look at a variety of different types of imaging at once/comparison
+* *Acquisition* - the act of conducting a scan/image
+* PET/CT
+  * Does a PET/CT sequentially in one session
+* DICOM
+  * national standard, forced by the government
+    * and thus heavily adopted internationally
+  * Metadata can give you a lot of info about the file
+  * granularity (pixel spacing/size of a pixel)
+    * On OsiriX, metadata tag is in the top right corner of an open slide
+* Fun fact on anonymization
+  * you often have to cut out the groin... because you can tell gender from that
+* You can make 3-D reconstructions using AI!
+  * Make histograms of each slide and piece those together
+* brightness
+  * calculate the min/max brightness in the images, and maps those to a look up table
+  * look up table can be used a color scale
+    * color matters for different purposes
+      * ie. PET is pretty much only done with "hot metal" scale
