@@ -1,0 +1,103 @@
+---
+title: Module 7 Notes
+slug: /4610/modules/7
+date: 2020-05-11
+tags:
+  - HC-4610
+  - Statistics
+  - Module 7
+---
+# Biostatistical Analyses Commonly Used in Research
+## The Statistics Tutor's Quick Guide
+### Section 1: General Information
+* Variable Types
+  * Scale (measuresments or counts)
+    * Continuous (any value, ie. height)
+    * Discrete (specific set of values)
+  * Categorical (buckets, tick boxes)
+    * Ordinal (has an obvious order, ie. Likert scales)
+    * Categorical (no meaningful order, ie. gender)
+* Summary Statistics
+  * Types of averages and their measure of spread
+    * Normally distributed
+      * use mean and standard deviation as measure of spread
+    * Skewed data
+      * use median and IQR
+  * Categorical
+    * Ordinal
+      * use median and IQR
+    * Nominal
+      * use Mode (no way to measure spread as no order)
+  * Charts
+| Chart | Variable Type | Purpose | Summary Statistics
+| ----------- | ----------- | ----------- | ----------- |
+| Bar/Pie Chart | One Categorical | Show frequencies/proportions/percentages | Class percentages |
+| Stacked/Multiple Bar | Two+ Categorical | Compares proportions within groups | Percentages within groups | 
+| Historgram | One scale | Shows distribution of results | Mean and Standard Deviation | 
+| Scatter Plot | Two Scale | Relationship between two variables and helps detect outliers | Correlation co-efficient | 
+| Boxplot | One Scale/Categorical | Compares spread of values | Median and IQR | 
+| Line Chart | Scale by time | Displays changes over time/comparison of groups | Means by time point | 
+| Means Plot | Oe scale/2 Categorical | Looks at combined effect of two Categorical variables on the mean of one scale variable | Means |
+#### Parametric vs Non-Parametric Tests
+* Parametric
+  * Mneumonic : IPOO (Independent, Paired, One-way, One-way Repeated)
+  * Preferred as they're more powerful
+    * More likely to detect a difference
+  * Requires continuous or discrete values (scale values)
+  * Assumes a normal distribution with no outliers
+  * Sample size has to be larger
+  * Types
+    * Independent-Samples T Tests
+      * Example: Chemically-treated algae vs non-chemically-treated
+    * Paired-Samples T Tests
+      * Example: Before and After Tests
+        * Crab Eyepatch Test
+    * One-way ANOVA
+* Non-Parametric
+  * Mneumonic: Mann Will Krush Fries
+  * Fallback tests due to skewed data
+  * Types
+    * Mann-Whitney Test
+      * Two samples have the same shape (but still skewed)
+    * Wilcoxon Signed-Rank Test
+      * Symmetric distribution - one is left- and the other is right-skewed
+    * Kruskal-Wallis Test
+      * Same shape and variances
+  * Usually based on ranks or signs
+* Corresponding Tests
+  * T Tests -> Mann-Whitney
+  * Paired-Samples T Test -> Wilcoxon Signed-Rank Test
+  * One-way ANOVA -> Kruskal-Wallis Test
+  * One-way Repeated Measures ANOVA -> Friedman's ANOVA
+#### Confidence Intervals
+* Most research uses sample data to make inferences about a larger population
+* Each CI has a matching constant value to work with.
+  * For 95%, it's 1.96
+* So to calculate an interval range for any given sample mean at 95%, you'd do:
+  * X ± 1.96 * (s / sqrt(n))
+    * X = sample mean
+    * s = standard deviation
+    * n = number in sample
+    * (s / sqrt(n)) = standard error
+#### Hypothesis Testing
+* **Null Hypothesis** - Typically states that there is no difference between groups or association between variables
+  * Goal is to prove this wrong (reject it)
+* **Alternative Hypothesis** - Often the research question
+* **Significance Level** - Probability of rejecting the null hypothesis when it is true
+  * AKA - Type I error
+  * p = 0.05 means there is a *1 in 20 chance of rejecting the null hypothesis when it is actually true*
+* **Test Statistic** - Value calculated from sample to decide whether to accept or reject the null hypothesis
+* **P-value** - probability that the test statistic is true under the null hypothesis
+  * You want to keep this as low as possible, usually 0.05
+* Court Case analogy
+  * Null hypothesis is the defendant is innocent
+  * Alternative hypothesis is the defendant is guilty
+  * Alternative hypothesis is true if there is a less then 5% (p < 0.05) that the defendant is innocent
+## Sample Size and Hypothesis Tests
+* Larger the sample size, the more likely of a significant result (p < 0.05)
+* **Effect Size** - Measure of strength or magnitude
+  * (mean of experimental group - mean of control group) / standard deviation
+  * 0.2-0.3 is "small", ~0.5 is "medium" and > 0.8 is "large"
+* Partial eta-squared
+  * Measure of variance
+  * 0.01 is a small association, 0.05 is medium, and 0.1 is large
