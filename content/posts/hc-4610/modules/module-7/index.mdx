@@ -44,7 +44,7 @@ tags:
   * Preferred as they're more powerful
     * More likely to detect a difference
   * Requires continuous or discrete values (scale values)
-  * Assumes a normal distribution with no outliers
+  * **Assumes a normal distribution with no outliers**
   * Sample size has to be larger
   * Types
     * Independent-Samples T Tests
@@ -54,6 +54,7 @@ tags:
         * Crab Eyepatch Test
     * One-way ANOVA
 * Non-Parametric
+  * **Used when there the values aren't a normal distribution or there are outliers**
   * Mneumonic: Mann Will Krush Fries
   * Fallback tests due to skewed data
   * Types
@@ -93,7 +94,7 @@ tags:
   * Null hypothesis is the defendant is innocent
   * Alternative hypothesis is the defendant is guilty
   * Alternative hypothesis is true if there is a less then 5% (p < 0.05) that the defendant is innocent
-## Sample Size and Hypothesis Tests
+#### Sample Size and Hypothesis Tests
 * Larger the sample size, the more likely of a significant result (p < 0.05)
 * **Effect Size** - Measure of strength or magnitude
   * (mean of experimental group - mean of control group) / standard deviation
@@ -101,3 +102,87 @@ tags:
 * Partial eta-squared
   * Measure of variance
   * 0.01 is a small association, 0.05 is medium, and 0.1 is large
+## Section II: Common Statistical Tests
+### Independent T-Test
+* Test the difference between two means
+  * means, not just averages, because it's a normal distribution
+* Rejecting the null hypothesis doesn't mean that the alternative
+  * Correlation does not lead to causation
+  * T-test does not imply causation
+* Independent means - each subject is only being measured once
+* Variables
+  * Dependent - measured on a continuous scale
+  * Independent - Binary (treated or not treated, etc)
+* Two different t-values
+  * Calculated t-value = retrieved via formula
+    * (M1 - M2) / (sqrt(S1^2/n1 + S2^2/n2)) 
+      * order is arbitrary
+      * M = mean, S = variance, N = sample size
+  * Critical t-value = looked up on t-table
+* Null hypothesis is rejected if calculated > critical
+  * Null hypothesis - *The population means are equal, and the two groups come from the same population
+### Mann-Whitney Test
+* Also known as the Wilcoxon Rank-Sum
+* Non-parametric equivalent to the Independent T-Test
+* Same requisites for variables
+### Paired T-Test
+* Tests the difference between two means
+* Important that the groups are dependent/paired/matching
+  * Makes the test more sensitive
+  * Makes the two groups as identical as possible
+  * Examples
+    * Same person under different treatments
+    * Same person measured before and after treatments
+    * Match individuals in different treatment groups based on demographics
+* Otherwise known as a repeated measures (but only repeated once)
+### Wilcoxon Sign-Rank Test
+* Non-paramtric equivalent of Paired T-Test
+* Tests the difference between two related variables
+### One-Way ANOVA Test
+* Analysis of Variance
+* Used to detect the difference between 3 or more independent groups
+  * Plural version of the independent t-test
+* Is ratio of between group variance vs the within group variance (Vb over Vw)
+  * **If the variance between groups is higher than the ratio within the group, then Null Hypothesis is likely to get rejected**
+    * The higher the ratio, the higher the probability of null hypothesis rejection
+* F(b, w) = the ratio
+  * b = degrees of freedom between groups
+  * w = degrees of freedom within groups
+### Kruskal-Wallis Test
+* Non-parametric version of One-Way ANOVA
+* Used to detect differences between 3 or more independent groups
+* Variables
+  * Dependent - Ordinal/Continuous
+  * Independent - Categorical
+### One-Way ANOVA with Repeated Measures
+* Otherwise known as the Within-Subjects ANOVA
+  * The factor within subjects is often **time**
+* an extension of the paired-samples t-tests
+* The same subjects are measured multiple times
+* Example: *pre-test -> intervention -> post-test -> time lapse -> post-test*
+### Friedman Test
+* Non-parametric equivalent to a repeated measures ANOVA
+* Useful when subjects rank a list
+### Two-Way ANOVA
+* Multiple categorical independent variables
+  * ie. when testing control, intervention A, and intervention B
+### Chi-Squared Test
+*  Used to compare *categories*
+  * ie. had a vaccine vs got the flu
+    * or received an surgery vs got re-admitted
+* Chi is the difference of the actual numbers from the expected numbers
+  * but squared
+### Relative Risk
+* The probability of an event occuring to all possible events
+  * Probability than an exposed person gets a disease over the probability of an unexposed person getting it
+* **"How much more likely is A to happen if B?"**
+* P-value and confidence interval overrides the importance of this
+* Further from 1, the greater the association is stronger (negative or positive
+### Odds Ratio
+* Odds vs Probability
+  * Odds are a value deduced from probability
+  * Probability is relative to favorable and  total outcomes
+    * Odds is relative to favorable and unfavorable outcomes
+* Odds Ratio - Odds that a case was exposed over odds that a control was exposed
+* P-value and confidence interval overrides the importance of this
+* Further from 1, the greater the association is stronger (negative or positive)
