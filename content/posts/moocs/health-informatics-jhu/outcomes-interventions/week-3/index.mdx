@@ -1,0 +1,115 @@
+---
+title: The Outcomes and Interventions of Health Informatics - Week 3
+slug: /moocs/health-informatics/outcomes-interventions/week-3
+date: 2020-07-10
+tags:
+  - MOOCs
+  - The Outcomes and Interventions of Health Informatics
+  - JHU
+  - Week 3
+  - Health Informatics
+  - Coursera
+---
+# Week 3 - Using Transactional and Summative Data and Knowledge for Decision Support
+## Key Concepts
+* Explain the role of standards in building healthcare informatics interventions.
+* Describe the basics of making knowledge computational
+* Describe why and how to monitor healthcare interventions put into place
+## What's in a Rule?
+### Using Knowledge at the Point of Care
+### Widgets
+* Provide Information
+  * target reference, including contextually releveant medical references of info buttons
+### Knowledge Base as a Set of Files
+* Targeted reference, including contextually relevant medical information references or info buttons: PDFs/URLs to info
+* Procedure refreshers, training and reminders: Videos
+### Implicit Knowledge: Programs
+* IF-THEN statements
+  * knowledge is maintained with the program
+  * If a guideline changes, so does the program
+* Implicit Knowledge
+  * Order facilitators (order sets, order consequents, order modifiers)
+  * Extended-time guildeline and protocol followers
+  * Relevant data displays
+  * Smart documentation forms
+### Explicit Knowledge: Rules
+* Explicit knowledge
+  * Task assistants for tasks such as drug dosing and acknowledging laboratory results
+  * Reactive alerts
+  * Diagnostic suggestions
+  * Patient summaries for ahnd-offs between clinicians
+  * Performance dashboards with prompts for areas needing attention
+  * Tracking and management systems that facilitate task prioritization
+### Rule Example
+### Information Around the Rule
+* Purpose
+* Explanation
+* Who takes responsibility for the rule?
+* Sources of knowledge?
+* Date tested
+* When is it triggered?
+### More Subtle Information
+* How to link terms in the rule to data in the EHR?
+* Who makes the decision on how to write the rule? 
+* Is the way that it's written consistent?
+  * If it's modified, how do we make sure everything existing is consistent
+* What other precedence is there/What do other institutions do?
+### Consequent Rule
+* IF critical risk, THEN recommend exchange transfusion
+### More Complicated Rule
+* IFs and ANDs and ORs
+* Wow ok, so conditional logic
+### Alert Rule
+* If allergic to pencillin, then give an alert
+* But allergic to pencillin is it's own rule:
+  * If pencillin is in "Field Allergies", then allergic to pencillin === true
+## The Lanugage of Rules
+* Ontologies are needed to make rules work properly
+* This is why people use ICD-10, SNOMED, LOINC, CPT, etc.
+## Data Dictionary and Taxonomy
+* Formulary - list of medications that a clinician orders
+* "Concept" column is more stable across institutions
+  * "No more what you call Celexa, it's still an antidepressant"
+### Strengths and Weaknesses
+* **Strengths**: Simple structure/Database tools to manage
+* **Weaknesses**: Can't be complex "LHS => RHS"
+  * Connections/graphs can't be made
+    * "Cephalexin **is a** cephalesporin"
+### Taxonomy
+* Hierarchy of Concepts
+* **is-a** relationships
+* MeSH (Medical Subject Heading) uses taxonomies to make it easier to search through publications such as PubMed
+## Value Sets
+* Definition: set of codes/concepts
+* IF patient's diagnosis is in {dx1, dx2, ... dxn} THEN do this
+### Use Cases
+* Rules
+* Quality indicators (numerator/denominator)
+* Cohort discovery: inclusion/exclusion criteria
+#### "Computable Phenotype"
+* Phenotype: something that is observable
+* Computable Phenotype: Atomic piece of data in a cell/concept/code
+* NIH has a "Value Set Authority Center"
+  * Has a pre-defined reposity of stewarded, verified and collected value sets
+* Each organization might have their own value sets
+  * There are some leading figures in value set definitions
+  * You want to pick the one that most aligns with your goals
+  * Literature, eMERGE project, CDISC, PCORnet
+## Semantic Networks
+* A taxonomy graph, rather than a tree
+* is-a, contains
+  * MANY other different types of relationships
+    * "is measured by", "has method", "has time aspect", "has specimen"
+* How you navigate a network changes the outcome
+  * path-dependent
+* LOINC and SNOMED can be integrated together through these networks
+* Errors in SNOMED
+  * Smoker - agent? person? role?
+  * Lots of inconsistencies
+## Ontologies
+* Purpose: separate domain knowledge from operational knowledge; provide an engine for web-based communications; ensure consistency/completeness
+* Definition: how things are structured and layered
+* Has high-level and low-level concepts
+* BioPortal - repo of ontologies
+* Important question is how wide of a net you want to cast with your ontology
+* Common for practices to ship out patient data and add ontological metadata to them
