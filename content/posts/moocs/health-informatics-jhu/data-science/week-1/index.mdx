@@ -1,0 +1,167 @@
+---
+title: The Data Science of Health Informatics - Week 1
+slug: /moocs/health-informatics/data-science/week-1
+date: 2020-07-20
+tags:
+  - MOOCs
+  - The Data Science of Health Informatics
+  - JHU
+  - Week 1
+  - Health Informatics
+  - Coursera
+---
+# Week 1 - Introduction to Databases and Data Types
+## Key Concepts
+* Describe common health data types (eg. demogrpahics, diagnosis, and medications) and explain their advantages and disadvantages
+* Describe various emerging health data types (eg. labs, vital signs and social data) and review the potential challenges in using them
+* Identify the key characteristics of databases
+* Identify the role of databases in the clinical informatics environment
+## Introduction to Databases
+### Informatics Definition of "Database"
+* Regular collection of data
+  * consistent columns/schema
+* Computerized record-keeping system
+* collection of stored operational (And relational) data used by application systems of an enterprise
+* Any collection of related data that is:
+  * Persistent - a patient is a patient
+  * Logically coherent
+  * Comprising inherently meaningful data
+  * relevant to some aspects of the real world
+### A whole buncha history
+### Components of an SQL Server
+#### Server
+* Operating system - linux, windows, etc.
+* server software - mySQL, Postgres
+* Database - object, tables, indexes
+* Security - server level logins and users
+  * not always 1:1 between login and users
+* Management: backups/agent jobs
+#### Client
+* Connection protocol - TCPIP, OLEDB, ODBC, JDBC
+* Used by applications - ORMs, websites, servers, excel
+### Summary
+* Database - collection of related data that is persistent, logically coherent, comprising inherently meaningful data, and relevant to some aspects of the real world
+* relational database - designed in terms of relating sets of data together
+* client <-> server: topology we will use, most common platform of relational databases
+* SQL - structured query language - relational
+## Databases in Clinical Informatics
+* Don't forget the Informatics Stack
+* Databases fit below the line in the informatics stack (how)
+* Example - "I need a database for TB cases"
+  * Why? clinical, admin, or research purposes?
+  * Databases don't worry about this, that's above the line
+### Privacy, Confidentiality and Security
+* Privacy - the ability to keep information about yourself secret - laws, regulation, trust
+* Confidentiality - the prevention of data loss - access, identity management, authentication, authorization, permissions
+* Security - integrity of the data system and network - encryption, keys, firewalls, VPNs, theft, hacking, intrusion, DDOS, trojans
+### Interfaced EHR
+* Distributed network
+  * LIS is separate from the EHR
+* Even the EHR is segmented
+  * pharmacy stuff is separated from clinical stuff which is separated from appointment stuff
+* Easier to adopt practices for each individual system because they're disjointed
+  * updating to a new version of FHIR, or a new data model would be easier here since you're not touching anything else
+* Analytics is more difficult
+* Has an interface engine in the middle that you interact with
+### Integrated EHR
+* Centralized databases all in one spot
+* might be overkill for many facilities
+* Hard to maintain
+* Higher requirements for adoption
+## Common Data Types I
+### Key Takeaway
+* Identify various data types used for clinical research, including both traditional (ie. common) and non-traditional (ie. emerging) data types)
+### Common Data Types
+* Demographics (age, sex, gender)
+* Diagnoses ( diagnosis, severity)
+* Medications (prescription, dispense, order)
+* Procedures (inpatient, outpatient)
+* Surveys (Patient health Questionnaire v.9, RedCap, SurveyMonkey)
+* Utilization (cost, hospitalization)
+### Data Type Specs - General Structure
+* Variables - list of common variables for this data type
+* Background - general trend in the population
+* Derived variables - different methods used to extract derived variables from this data type
+  * extract prescription pattern and adherence from medications
+* Coding standards - common coding conventions for this data type (eg ICD, SNOMED< RxNorm, DSM, NDC, ATC)
+* Data Sources - common data sources containing this data type
+  * claims, EHR, HIEs
+* Data quality - typical data quality issues with this data type
+* Data interoperability - specific interoperability issues that may affect the collection, integration and sharing of this particular data type
+* Legal considerations - issues with privacy and security that may impact accessing or utilizing this data type
+  * HIPAA
+### Demographics
+* Variables - age, sex, gender, location, family, name, etc.
+* Background - increasing life expectancy in the US
+* Derived variables - age groups (ranges, brackets, Medicare eligible)
+* Coding standards - available but not commonly used; age is often coded as DOB or age in years
+  * Sex is usually 0 (unknown), 1 (female), 2 (male), or 9 (N/A or other)
+* Data sources - multiple patient-level data sources including claims, EHR, HIEs and others
+* Data quality - typically has an acceptable data quality due to various mandates to collect them accurately
+* Data interoperability - N/A, sufficient due to consistent enough coding standards (except gender)
+* Legal considerations - age, but not sex, is HIPAA protected
+## Common Data Types II
+### Diagnoses
+* Variables - diagnosis (diseases, symptoms, injuries, health status factors, family history)
+* Background - chronic disease are on the rise
+* Derived Variables - severity, trajectory, history, location, etc.
+* Coding standards - available and commonly used (ICD-10, LOINC, SNOMED, DSM)
+* Data sources - patient-level data sources (clinical or claims data)
+* Data quality - acceptable data quality due to mandates to collect them accurately; quality differs across data sources
+* Data interoperability - mapping from one system to another, or one version to another (ICD-9 to ICD-10)
+  * Mapping is difficult though
+* Legal considerations - certain diagnostic codes (HIV, GSW, mental illness) are protected under federal and state laws
+### Medications (and Procedures, I Guess)
+* Variables - prescribed (EHR) and filled (claims)
+* Background - certain medications have an overall higher cost
+* Derived Variables - medication adherence (ex. polypharmacy, medical regiment complexity index, medication possession ratio)
+* Coding Standards - RxNorm, NDCs, SNOMED C-Axis, ATC, Medispan, Multum, GPI, FDB
+* Data sources - clinical, claims, prescription benefit management, surescripts, prescription drug monitoring program
+* Data Quality - mandated data quality; quality differs across systems
+* Data interoperability - mapping from one system to another
+* Legal Considerations - certain medications may reveal sensitive information or diagnoses
+## Common Data types III
+### Procedures
+* ...Pretty much like the other data types... except ICD-CM, and CPT
+### Surveys
+* No real coding standards, HRA, PHQ-9, GAD-7
+* Real flexible
+* Quality is difficult: sampling/selection bias, non-response bias, social desiribility bias, validity/reliability issues
+### Utilization
+* How patients are using clinical resources
+* Cost, emergency room admission, hospitalization, readmission
+  * Derived variables, 30-, 60-day readmission
+## Emerging Data Types
+### Lab Data
+* Lab orders - was previously not available at the population level
+* Could help derive diagnosis severity and missing diagnoses
+* There is LOINC, but most EHRs use their own bespoke coding systems
+* labs require lots of domain knowledge
+  * lots of data pruning and manipulating
+  * device error, cleaning, different decimals
+  * units
+### Vital Signs
+* Variables - height, weight, BMI, blood pressure, temperature
+* long term trends and risks
+* LOINC, but no one really uses it
+* Quality is questionable due to human error (BP sitting vs BP standing)
+* interoperability - often mismatching units and other data quality issues
+* Variations
+  * variations in physiology
+  * subjective biase (pain level)
+  * measurement errors (unreliable tool/instrument)
+  * Data capture errors
+  * Data interoperability issues
+### Social Data
+* variables - smoking status, alcohol consumption, addictive behaviors, socioeconomic status
+* risk scores
+* treatment affordability
+* no coding systems
+* low data quality
+* no interoperability
+* more survey-based
+### Patient-generated data
+* physical activity, mobile/wearable device, patient-reported symptoms
+* no standards
+* lots of derivable data
+* more non-standard devices/apps because not monitored by the FDA

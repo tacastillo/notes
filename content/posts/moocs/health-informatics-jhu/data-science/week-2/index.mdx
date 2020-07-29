@@ -1,0 +1,161 @@
+---
+title: The Data Science of Health Informatics - Week 2
+slug: /moocs/health-informatics/data-science/week-2
+date: 2020-07-28
+tags:
+  - MOOCs
+  - The Data Science of Health Informatics
+  - JHU
+  - Week 2
+  - Health Informatics
+  - Coursera
+---
+# Week 2 - Data Sources and Data Challenges
+## Key Concepts
+* Describe the common sources of health data, specifically insurance claims and electronic health records
+* Identify major population-level sources of health data such as APCD, HCUP and PCORnet
+* Review the common challenges of health data including data quality, interoperability, and system architecture
+* Describe various perspectives of "Big Data" and explain its implications for health analytics
+## Common Clinical Data Sources
+### Billing/Claims Data
+| Advantages | Disadvantages | 
+| ----------- | ----------- |
+| Covers data across multiple providers | Only contains Dx, Rx and Tx (lacks lab values, vital signs, family history, etc.) |
+| Higher consistency of data format | Limited to insured patients |
+| Large-scale data sets are available (BlueButton) | Anything not covered is missing |
+#### Insurance Data: Hospitals
+* Hospital claims, often referred to as facility claims, can be broadly categorized as inpatient and outpatient
+  * Inpatient - admission to a facility
+  * Outpatient - ER visits, ambulatory surgeries, check ups, in-n-outs
+* Often use a format called UB04 (Uniform Billing) (paper)
+  * Fields are consistent even when switching electronically
+#### Insurance Data: Physician Claims Data
+* Not just clinicians; also NPs, therapists, etc.
+  * CMS 1500 Form
+* For any given encounter, 2 claims could be filled: one for the facility usage (Hospital) and one for the services provided (Physician)
+#### Insurance Data: Pharmacy
+* Relatively straightforward
+* Outpatient drugs are given an NDC (National Drug Code)
+* Prescriptions that are prescribed but not filled do not generate claims
+* Absence of Dx in the data
+* Pharmacy Benefits Manager (PBM) works between the payer and the patient/provider
+  * ie. CVS Health
+* Other ways to get medication data
+  * EHRs, Surescripts, Prescription Drug Monitoring Program (PDMP)
+### EHR Data
+| Advantages | Disadvantages | 
+| ----------- | ----------- |
+| Includes lab values, vitals, social determinants, etc.| Not longitudinal; only carries data from one provider |
+| Covers things not covered by insurance | Lower consistency, also has free text |
+| Insured and uninsured patients | Large-scale datasets are hard to find |
+* Meaningful Use has helped
+* Lack of interoperability makes it hard to work with
+* Lacking longitudinal data (only from one provider)
+* Common population-level health data types in EHRs:
+  * Demographics, Dx and problem lists, Procedures, Rx, social determinants, vital signs, immunization records, surveys, patient-reported outcomes, clinical notes
+* Non-traditional sources of Population-Level Data  
+  * Patient-provided/-generated outcomes
+  * Public health/vital records
+  * Social services
+  * Environmental/Geographical
+  * Resource availability
+  * Consumer/Non-medical
+  * HIE
+## Population-Level Data
+* APCD - All-Payer Claims Data
+  * state-wide claims data, increasing adoption
+* CMS Data
+  * Medicare - 44m
+  * Medicaid - CHIP, low-income parents, pregnancy, disabilities, low-income seniors
+* Commercial Insurance Claims databases
+  * IMS, Optum, Truven, FAIR Health
+* Corporate Data Warehouse (CDW)
+  * the VA
+* Healthcare Cost and Utilization Project (HCUP)
+  * AHRQ-funded, a whole bunch of discharge registries!
+  * National Inpatient Sample (NIS) - largest publicly available all-payer hospital inpatient care database
+  * Kid's Inpatient Database (KID) - inpatient stays for children
+  * Nationwide Emergency Department Sample (NEDS) - outpatient ED visits
+  * Nationwide Readmissions Database - readmissions across both payers and uninsured patients
+  * State Inpatient Databases (SIDs) - 
+  * State Emergency Department Databases (SEDDs) - outpatient ED visits
+* PCORnet - Patient-Centered Clinical Research Network
+  * regional; EHR-based
+  * 29 internal networks and Coordinating Center
+    * 155 organizations and millions of patients
+* mHealth Platforms
+  * SMART and HealthKit lol
+* Large-scale surveys
+  * lots from the CDC
+* Look at non-health related data sets, too
+  * social data, GIS data, marketing data, financial data
+## Data Challenges I
+### Key Takeaways
+* Examine how data quality affects clinical operation and research
+* Analyze data interoperability challenges that may hinder operations and research
+### Data Management Challenges
+* Quality - Accuracy, completeness, timeliness
+  * Conversion errors, shitty games of telephones, etc.
+  * claims data often isn't timely because it can get rejected, revised, etc.
+  * Practicality - access to it might be difficult
+* Linkage and integration - interoperability and MPI
+  * how well data can link/be used together
+  * MPI is tough because these identifying features are protected via HIPAA/PHI
+* Data system architecture and design - centralized vs federated/distributed models
+  * federated - an MPI is needed
+* Data access, prviacy and use challenges
+  * PHI, HIPAA
+## Data Challenges II
+### Key Takeaways
+* Identify challenges in using various Big Data sources for analytic purposes
+### Big Data
+* 5V data specifications:
+  * Volume: data quantity (size, length)
+  * Variety: data types (structure, standardization, ontology)
+  * Velocity: data refresh Frequency (real-time, timeliness)
+  * Veracity: data quality (accuracy, completeness)
+  * Value: add-value of data (cost, feasibility, governance)
+### Health Analytic Process
+1. Database Development
+2. Data Preparation
+3. Modeling and Data Mining
+4. Model Validation and Evaluation
+5. Use of Knowledge
+6. Generate New Data
+### Challenges with Big Data
+* High data volume
+  * Relational might not work
+    * Columnar (Redshift), Graph (GraphQL), NoSQL (Mongo), Document-based (ElasticSearch)
+* High data variety
+  * Data lakes!
+* High data velocity
+  * Streaming data?
+* Complex Data Veracity
+  * Nullness? Completeness?
+* Ambiguous Value
+* What happens if you have the entire population in your "sample"?
+  * Sampling algorithms are no good anymore
+## Data Challenges III
+* Explain denominator selection challenges
+* List privacy challenging when using health data
+* Identify other challenges for using clinical/health data
+### Denominator and Variable Selection
+* Denominator selection - features that match a certain criteria
+  * special age, special conditions, disabilities, etc.
+  * who is your target sample within your population?
+* Timeframe selection - length of the training data set, test data set
+* Outcome selection - cost, mortality, admission, hospitalization, readmission, etc.
+* Feature/factor selection and reduction
+  * Minimizes factors used without producing skewness
+* Purpose - are you using the data for the right purpose
+### Data Access and Privacy Challenges
+* Certain data is protected (PHI)
+* Must use techniques to avoid putting PHI into your models
+  * Date shifting, obfuscating, using only the first 3 digits of the zip code, etc.
+* Makes MPIs pointless because you can't link your federated/distributed data sources together
+### Other Data Challenges
+* Process of care - different providers generate different data values
+  * Can create noise in modeling
+* Nature of intervention - different interventions with different levels of risk may be encoded similarly
+  * Two different interventions are denoted by the same code (ie. amount of anesthesia)
+* Random chance or external factors - two exactly similar patients may develop two different risk profiles due to chance
