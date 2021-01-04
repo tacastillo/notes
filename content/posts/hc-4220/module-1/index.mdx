@@ -1,0 +1,138 @@
+---
+title: Module 7 Notes - Other
+slug: /data-mining/module-1
+date: 2020-02-22
+tags:
+  - HC-4220
+  - Data Mining
+  - Module 1
+---
+# Data Mining Module 1
+## Book - Introduction to Data Mining (Tan)
+### Introduction
+* Various different industries have started to produce various types of data. With this data, they have started to find information, knowledge and wisdom from it.
+* Each of these industries have their own data issues though.
+### 1.1 What is Data Mining?
+* Data mining is the process of automatically discovering useful information in large data repositories
+* Data mining can be used for purposes such as finding patterns or predicting outcomes
+* Information retrieval is not data mining
+    * Data mining has been used to improve information retrieval
+#### Data Mining and Knowledge Discovery
+* KDD stands for Knowledge Discovery in Databases
+* the five segments of KDD according to this book are:
+    * Input data, data pre-processing, data mining, post-processing and constructing information
+* Pre-processing is transforming the raw input data into an appropriate format for analysis
+* "Closing the loop" is integrating data mining results into decision support systems
+### 1.2 Motivating Challenges
+* Scalability
+    * Data sets to the size of petabytes are being used
+    * Different algorithms and data structures must be considered for data at scale
+    * Out-of-core algorithms are algorithms that that don't load all the data into memory
+    * Can also use sampling or distributed algorithms
+* High Dimensionality
+    * records can have hundreds of thousands of columns/features
+* Heterogenous and Complex Data
+    * There are complex data types arising like JSON, hyperlinks, text, DNA, time series data, etc.
+* Data Ownership and Distribution
+    * Data needed may not be stored in one location or owned by one organization
+    * Distributed data mining algorithms must figure out:
+        * how to reduce the amount of pings to the data
+        * how to consolidate the data transfer
+        * how to deal with data security
+* Non-Traditional Analysis
+    * Traditional analysis is the hypothesis-and-test paradigm
+    * New data tasks require evaluating up to thousands of hypotheses at a time
+### 1.3 The Origins of Data Mining
+* Adopts from statistics: sampling, estimate and hypothesis testing
+* Adopts from computer science: search algorithms and modeling techniques
+* Also adopts knowledge from database systems and parallel computing
+### 1.4 Data Mining Tasks
+* Predictive Tasks - predict the value of a target given the values of the predictors
+    * Classifications and regression tasks
+* Descriptive Tasks - Derive patterns, correlations, trends, clusters, trajectories and anomalies
+    * Associating analysis is used to discover patterns that describe strongly associated features in the data
+        * For example, the iris data set
+    * Cluster analysis seeks to find groups of closely related records.
+    * Anomaly detection is the task of identifying records whose features are significantly different from the rest of the data 
+## Data Mining in Healthcare - A Review
+### Abstract
+* Data mining is the process of pattern discovery and extraction where huge amount of data is involved.
+### Introduction
+* Data mining methods include generalization, characterization, classification, clustering, association, evolution, pattern matching, data visualization and meta-rule guided mining
+* 50 articles used in this systemic review
+### 2. Data Mining An Overview
+* Data mining is the process of applying computer based information systems for discovering knowledge from data
+#### 2.1 Disciplines Involved in Data Mining
+* machine learning, artificial intelligence, probability, and statistics
+* research was predominantly in the machine learning space (40 articles out of 50)
+#### 2.2 Data Mining Models
+* Predictive models
+    * often apply supervised learning to predict unknown or future values
+    * most commonly used in healthcare (47 out of 50)
+* Descriptive models
+    * often apply unsupervised learning in finding patterns describing the data that can be interpreted by humans
+#### 2.3 Data Mining Tasks
+* Classification, association rules, clustering, anomaly detection
+    * predominantly classification (42 out of 50)
+### 2.4 Data Mining Methods
+* Anomaly detection uses standard support vector descriptions, density induced SVDs, and Gaussian mixture. 
+* For classification: discriminant analysis, decision tree, Markov chains, swarm intelligence, KNN, genetic classifiers, neural networks, SVMs and association rules
+### 3. Data Mining in Healthcare
+* Lots of rich data, courtesy of EMRs and administrative data
+* Mainly being used to predict various diseases and diagnosing for clinicians
+#### 3.1 Anomaly Detection
+* can be used to classify whether or not a patient has a condition/disorder
+#### 3.2 Clustering
+* Can be used to predict readmissions
+#### 3.3.1 Statistical Classification
+* class imbalance problems are prevalent in healthcare data sets
+* Mahalanobis Taguchi System (MTS) algorithm is useful with unbalanced data
+#### 3.3.2 Linear Discriminant Analysis (LDA)
+* Useful if the data is in linear form
+#### 3.3.3 Decision Tree
+* performs poorly on imbalanced data sets
+#### 3.3.4 Swarm Intelligence
+* Particle swarm optimization (PSO) efficiently finds optimal/near optimal solutions in large search spaces.
+#### 3.3.5 K-Nearest Neighbor
+* Large focus on accuracy rather than classification time
+#### 3.3.6 Logistic Regression
+* Logistic regressions work well for larger data sets
+#### 3.3.7 Bayesian Classifier
+* handles missing data well
+#### 3.3.8 Support Vector Machines
+* great at generalization/doesn't overfit often
+### Discussion
+* Common to find imbalanced data sets
+* Lots of missing values too
+# KDD Process in Data Mining Video
+* Data Cleaning - removing noise and inconsistent data
+* Data Integration - combining multiple data sources
+* Data Selection - retrieving data relevant to the analysis task
+* Data Transformation - summary or aggregate operations are performed to consolidate the data in exactly what you need
+* Data Mining - use intelligent methods (like machine learning) to extract data patterns
+* Pattern Evaluation - review and analyze the patterns that are formed
+* Knowledge Presentation - disseminate your findings
+# CMS Value-Based Programs
+## Hospital Value-Based Purchasing (VBP) Program
+* awards acute care hospitals with incentive payments for inpatient quality of care
+* uses the Inpatient Prospective Payment System (IPPS) to find out how much to pay out
+* both goals are for hospital patients (better QoC and better experience)
+* Goals
+    * reducing adverse events
+    * adopting evidence-based care standards
+    * develop processes that improve patient experience
+    * increasing transparency
+    * recognizing hospitals that provide high-quality care at a lower cost to Medicare
+## Hospital Readmission Reduction Program (HRRP)
+* Hospitals get their Medicare reimbursements reduced by up to 3% if they're worse than other comparable hospitals at readmissions for a subset of conditions
+## Hospital-Acquired Conditions (HAP) Program
+* promotes reductions in sepsis, pressure sores, and hip fractures
+* the worst performing quartile has reimbursements reduced by 1%
+## Other Value-Based Programs by CMS
+* End-Stage Renal Disease Quality Incentive Program (ESRD QIP)
+    * up to 2% reduction in facilities that do not reach satisfactory levels in:
+        * clinical care, care coordination, safety, and patient and family engagement
+* Skilled Nursing Facility Value-Based Purchasing (SNF VBP)
+    * incentive payments for reducing readmissions in skilled nursing facilities
+* Home Health Value-Based Purchasing (HHVBP) Model
+    * based on quality of care, and not just quantity of services provided
