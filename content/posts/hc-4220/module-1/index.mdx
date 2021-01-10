@@ -136,3 +136,136 @@ tags:
     * incentive payments for reducing readmissions in skilled nursing facilities
 * Home Health Value-Based Purchasing (HHVBP) Model
     * based on quality of care, and not just quantity of services provided
+# Data Mining in Healthcare and Biomedicine: A Survey of the Literature
+## Introduction to Data Mining
+### What is Data Mining?
+* Data mining began as as statistics and machine learning, but has expanded to pattern recognition, database design, AI, and visualization.
+* Goal is to gain novel and deep insights in large data sets
+* Data mining process consists of six steps
+    * Business understanding, data understanding, data preparation, modeling, evaluation and deployment
+    * or data selection, data preprocessing, data transformation, data mining, and interpretation/evaluation
+* Data mining is often interpreted as a part of Knowledge Discovery in Databases (KDD)
+* Can be used for clinical decision-making or for administrative purposes
+    * Clinical decisions: process of diagnosis, choice of treatment options, prognosis prediction
+    * Administrative purposes: staffing estimates, insurance, demographic and market trends, quality assurance, process efficiency
+### How is Data Mining Different From Statistics?
+* Statistics is primary data analysis, data mining is secondary data analysis
+* Statistics is rooted in math and being formulaic, data mining is ad hoc and rooted in heuristics
+* Statistics uses samples, data mining uses populations
+* Statistics uses numbers, data mining can use any medium of data (sounds, text, images)
+* Statistics uses a hypothesis, data mining is inductive and tries to generalize from specific data
+### How does data mining in biomedical and healthcare applications differ from other applications?
+* Lots of privacy and legal issues
+* Lots of missing values
+    * Patients with the same diseases don't undergo the same labs or examinations
+* Lots of time-related data
+    * The order in which observations were taken matters
+* Difficult to get data out of EMRs
+* Data quality may be impacted by HIPAA and the deidentification process
+* Legal considerations
+    * data mining may find faults in data that may lead to malpractice suits
+## Data Mining Algorithms
+* Descriptive (unsupervised) and Predictive (supervised)
+### Classification
+* Can be rule-based (if-thens) or math-based (SVMs)
+* A rule being 90-95% accurate is regarded as good
+#### Naive Bayesian Classifier
+* It's fast and easy to use because it just multiplies probabilities
+* Assumes all attributes are independent of each other
+* many patient symptoms and conditions are related to each other
+    * like blood pressure and BMI
+* Often used as a baseline algorithm
+#### Neural Network
+* Neural networks require many parameters
+* Widely used for diagnosing diseases because it handles noisy data well
+* Much slower than other methods
+    * You gotta do GridSearch, too, to find the right parameters and that makes it take even longer
+* Opaque models
+    * Medical professionals often can't use them because they can't explain what happens inside
+#### Decision Tree
+* The root node is always the most significant attribute in the class
+* Trees might get too complex to be traversable
+* Pruning prevents overfitting by removing the least important branches from the bottom-up
+#### Support Vector Machines (SVMs)
+* Uses gradient descent to construct hyperplanes
+* Most accurate, but requires a lot of computational resources
+* Only can handle binary classifications, has to break down multiclass problems into multiple binary problems
+#### Classification Based on Association (CBA)
+* Don't know what this is
+* Difficult to train because you need to tune the parameters to the exact value
+#### Ensemble
+* Three different kinds: boosting, bagging, and random subspace
+#### AdaBoost
+* Outperforms SVMs
+### Clustering
+* Exploratory in nature
+* Uses only independent variables
+#### Hierarchical Clustering Algorithms
+* Large time complexity
+* Can produce dendrograms which make them super explainable
+* Single-link and average-link algorithms exist
+#### Partitional Clustering Algorithms
+* Like K-Means or KNN
+* more accurate and more scalable than clustering algorithms
+### Association
+* Algorithms can be used to make associations
+* If someone buys bread and butter, they're also likely to buy milk
+* In healthcare, helps arise patterns among symptoms, health conditions and diseases
+* Takes two percentages: support and confidence
+* If an item is not frequent (not satisifying the support), then its descendants are also not frequent
+## Guidelines on How to Use Data Mining Algorithms
+### Classification Guidelines
+* Remove redundant (Age and DOB) or irrelevant (Sex on prostate cancer) features
+* Combinations can happen, so be careful when performing noise reduction
+* Use cross-validation
+### Clustering Guidelines
+* Use hierarchical clustering first to get an idea of K, and then use K-Means
+    * probably use average-link
+* Remove outliers because K-means is sensitive to them
+* Don't forget to OneHot or OrdinalEncode your values
+### Association Guidelines
+* Gotta create a concept hierarchy (like in OMOP)
+    * Because it's not just bread, it's sourdough, or white, or Killer Dave's
+## Data Mining Applications in Industry
+### Highmark: Healthcare Fraud Prevention
+* Built classification models to predict fraudulent insurance claims
+### Highmark: Detecting Underdiagnosed Patients
+* Made a decision tree risk classifier for 13 conditions
+* Alerted those patients for early screening
+### Healthways: Reducing Increase Healthcare Costs
+* identifies high-risk customer
+## Data Mining in Research AReas
+### Classification Applications
+* Always important to try multiple algorithms
+* lol, used the Wisconsin breast cancer data set
+### Clustering Applications
+* able to cluster good and poor prognosis tumors
+### Association Applications
+* identify relationships between a specific drug and other drugs
+## Conclusion
+* Several problems that hamper its clinical usage
+* data mining algoirthms usually require hyperparameters
+* data mining accuracy is usually not high enough to be used in a clinical setting
+    * generally low quality of patient data
+* lack of full data mining packages for KDD
+# Using Data Mining Strategies in Clinical Decision-Making
+## Decision Making
+* Two types of decision-making
+    * Analytics and logical
+    * Interpretice and intuitive
+* Social judgement theory
+* Intuition is an important part of clinical decision making
+## Data Mining
+* Data mining is understanding and interpreting the data by computational techniques from statistics, machine learning and pattern recognition in order to predict other variables or identify relationships within the information
+* Used as far back as 1970 to diagnose renal disease
+* Data mining is used to *minimize* errors in decision making
+## Methods
+* 21 articles
+* Decision trees are pretty popular
+* Rotator cuff tear example
+    * high false positive rate manually done
+    * Neural networks were used on variables such as pain and demographics
+* Data mining saves time
+* Limitations
+    * Large amounts of data are required
+    * Usually blackboxes
